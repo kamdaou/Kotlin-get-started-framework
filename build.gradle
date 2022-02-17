@@ -1,0 +1,68 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        /*
+        *Safeargs
+        */
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+plugins {
+    id 'com.android.application' version '7.1.1' apply false
+    id 'com.android.library' version '7.1.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+
+    // Coroutine versions
+    coroutineLatestVersion = "1.4.1"
+    coroutineStableVersion = "1.3.9"
+    coroutinePreferedVersion = "1.3.9"
+
+    // Room versions
+    roomLatestVersion = "2.4.1"
+    roomStableVersion = "2.4.1"
+    roomPreferedVersion = "2.4.1"
+
+    // OkHttp
+    okHttpLatestVersion = "3.14.9"
+    okHttpStableVersion = "3.14.9"
+    okHttpPreferedVersion = "3.14.9"
+
+    // Retrofit
+    retrofitPreferedVersion = "2.9.0"
+    retrofitLatestVersion = "2.9.0"
+    retrofitStableVersion = "2.9.0"
+    retrofitConvertersPreferedVersion = "2.5.0"
+    retrofitConvertersLatestVersion = "2.5.0"
+    retrofitConvertersVersion = "2.5.0"
+
+    // WorkManager
+    workLatestVersion = "2.7.1"
+    workPreferedVersion = "2.7.1"
+    workStableVersion = "2.7.1"
+
+    // RecyclerViews
+    recyclerViewsLatestVersion = "1.2.1"
+    recyclerViewsStableVersion = "1.2.1"
+    recyclerViewsPreferedVersion = "1.2.1"
+
+    recyclerViewsSelectionLatestVersion = "1.1.0"
+    recyclerViewsSelectionStableVersion = "1.1.0"
+    recyclerViewsSelectionPreferedVersion = "1.1.0"
+
+}

@@ -1,0 +1,161 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-parcelize'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.kotlinframework"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*
+    * Databinding
+    */
+    buildFeatures {
+        dataBinding true
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    /*
+    *Coroutines
+    */
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinePreferedVersion"
+
+
+    /*
+    *Room database dependencies
+    */
+
+    implementation("androidx.room:room-runtime:$roomPreferedVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomPreferedVersion")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$roomPreferedVersion")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomPreferedVersion")
+
+    // optional - RxJava2 support for Room
+    implementation("androidx.room:room-rxjava2:$roomPreferedVersion")
+
+    // optional - RxJava3 support for Room
+    implementation("androidx.room:room-rxjava3:$roomPreferedVersion")
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation("androidx.room:room-guava:$roomPreferedVersion")
+
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:$roomPreferedVersion")
+
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:$roomPreferedVersion")
+
+    // To use ViewModelScope
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$roomPreferedVersion")
+
+    // To use LifeCycleScope
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$roomPreferedVersion")
+
+    // To use LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$roomPreferedVersion")
+
+
+    // TODO Make sure internet authorization are given in android manifest file while using retrofit or okHttp
+    /*
+    *Retrofit
+    */
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitPreferedVersion"
+    // Moshi
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitConvertersPreferedVersion"
+    // Scalar
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitConvertersPreferedVersion"
+    // Jackson
+    implementation "com.squareup.retrofit2:converter-jackson:$retrofitConvertersPreferedVersion"
+    // Gson
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitConvertersPreferedVersion"
+    // Protobuf
+    implementation "com.squareup.retrofit2:converter-protobuf:$retrofitConvertersPreferedVersion"
+    // Wire
+    implementation "com.squareup.retrofit2:converter-wire:$retrofitConvertersPreferedVersion"
+    // Simple Xml
+    implementation "com.squareup.retrofit2:converter-simplexml:$retrofitConvertersPreferedVersion"
+    // JAXB
+    implementation "com.squareup.retrofit2:converter-jaxb:$retrofitConvertersPreferedVersion"
+
+
+    /*
+    * OkHttp
+    */
+
+    implementation "com.squareup.okhttp3:okhttp:$okHttpPreferedVersion"
+
+
+    /*
+    * WorkManager
+    */
+
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:$workPreferedVersion")
+
+    // optional - RxJava2 support
+    implementation("androidx.work:work-rxjava2:$workPreferedVersion")
+
+    // optional - GCMNetworkManager support
+    implementation("androidx.work:work-gcm:$workPreferedVersion")
+
+    // optional - Test helpers
+    androidTestImplementation("androidx.work:work-testing:$workPreferedVersion")
+
+    // optional - Multiprocess support
+    implementation "androidx.work:work-multiprocess:$workPreferedVersion"
+
+
+    /*
+    * RecyclerViews
+    */
+
+    implementation("androidx.recyclerview:recyclerview:$recyclerViewsLatestVersion")
+    // For control over item selection of both touch and mouse driven selection
+    implementation("androidx.recyclerview:recyclerview-selection:$recyclerViewsSelectionLatestVersion")
+}
