@@ -15,6 +15,12 @@ buildscript {
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        /*
+        *Firebase
+        */
+
+        classpath 'com.google.gms:google-services:4.3.10'
     }
 }
 plugins {
@@ -64,5 +70,28 @@ ext {
     recyclerViewsSelectionLatestVersion = "1.1.0"
     recyclerViewsSelectionStableVersion = "1.1.0"
     recyclerViewsSelectionPreferedVersion = "1.1.0"
+
+    // Firebase
+    firebaseAuthLatestVersion = "21.0.1"
+    firebaseAuthPreferedVersion = "21.0.1"
+    firebaseAuthStableVersion = "21.0.1"
+
+    firebaseCloudStorageLatestVersion = "20.0.0"
+    firebaseCloudStorageStableVersion = "20.0.0"
+    firebaseCloudStoragePreferedVersion = "20.0.0"
+
+    firebaseInAppMessagingLatestVersion = "20.1.1"
+    firebaseInAppMessagingStableVersion = "20.1.1"
+    firebaseInAppMessagingPreferedVersion = "20.1.1"
+
+    firebaseRealTimeDatabaseLatestVersion = "20.0.3"
+    firebaseRealTimeDatabaseStableVersion = "20.0.3"
+    firebaseRealTimeDatabasePreferedVersion = "20.0.3"
+
+    firebaseCloudMessagingLatestVersion = "23.0.0"
+    firebaseCloudMessagingStableVersion = "23.0.0"
+    firebaseCloudMessagingPreferedVersion = "23.0.0"
+
+
 
 }

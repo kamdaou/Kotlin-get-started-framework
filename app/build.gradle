@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 //apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 31
@@ -158,4 +159,20 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:$recyclerViewsLatestVersion")
     // For control over item selection of both touch and mouse driven selection
     implementation("androidx.recyclerview:recyclerview-selection:$recyclerViewsSelectionLatestVersion")
+
+
+    /*
+    * Firebase
+    */
+
+    // Authentication
+    implementation "com.google.firebase:firebase-auth-ktx:$firebaseAuthPreferedVersion"
+    // Cloud Sttorage
+    implementation "com.google.firebase:firebase-storage-ktx:$firebaseCloudStoragePreferedVersion"
+    // InApp messages
+    implementation "com.google.firebase:firebase-inappmessaging-ktx:$firebaseInAppMessagingPreferedVersion"
+    // RealTime Database
+    implementation "com.google.firebase:firebase-database-ktx:$firebaseRealTimeDatabasePreferedVersion"
+    // Cloud messaging requires google play
+    implementation "com.google.firebase:firebase-messaging-ktx:$firebaseCloudMessagingPreferedVersion"
 }
